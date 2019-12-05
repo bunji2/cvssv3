@@ -1,7 +1,6 @@
 package cvssv3
 
 import (
-	"cvssv3"
 	"fmt"
 	"testing"
 )
@@ -53,7 +52,7 @@ func TestBaseScore(t *testing.T) {
 		"CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H": 9.6,
 	}
 	for vs,expected := range d {
-		m, err := cvssv3.ParseVector(vs)
+		m, err := ParseVector(vs)
 		if err == nil {
 			actual := m.BaseScore()
 			fmt.Printf("%s, expected = %4.1f, actual = %4.1f\n", vs, expected, actual)
